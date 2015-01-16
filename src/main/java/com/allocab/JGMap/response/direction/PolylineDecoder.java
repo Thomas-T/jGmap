@@ -1,6 +1,7 @@
 package com.allocab.JGMap.response.direction;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PolylineDecoder {
@@ -33,6 +34,8 @@ public class PolylineDecoder {
       Point p = new Point( (double)lat/1E5, (double)lng/1E5 );
       track.add(p);
     }
+    
+    Collections.reverse(track);
     return track;
   }
   

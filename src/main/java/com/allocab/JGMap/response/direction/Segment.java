@@ -19,7 +19,7 @@ public class Segment {
   public Point getPositionInSegment(Long secondElapsedInSegment) {
     //System.out.println("seconds elapsed in segment : "+secondElapsedInSegment);
     
-    double prog = (double)secondElapsedInSegment / (double)duration.getValue();
+    double prog = 1-((double)secondElapsedInSegment / (double)duration.getValue());
     if(prog > 1) {
       prog = 1;
     }
