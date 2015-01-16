@@ -27,7 +27,7 @@ public class TestDirectionResponse {
   
   @Test
   public void testBuildingCompleteDirection() throws JsonGenerationException, JsonMappingException, IOException {
-    String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction.json");
+    String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
     Direction response = Direction.deserialize(directionStr);
     
     Date departureAt = new Date();    
@@ -53,12 +53,12 @@ public class TestDirectionResponse {
           nbSame = 0;
         }
         
-        if(nbSame > 1) {
+        if(nbSame > 30) {
           running = false;
         }        
       }
       previous = point;
-      dt = dt.plusSeconds(3);
+      dt = dt.plusSeconds(1);
     }
     
     ObjectMapper objectMapper = new ObjectMapper();
