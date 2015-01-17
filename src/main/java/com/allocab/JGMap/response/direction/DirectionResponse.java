@@ -4,7 +4,7 @@ package com.allocab.JGMap.response.direction;
 import com.allocab.JGMap.response.AbstractResponse;
 
 @SuppressWarnings("serial")
-public class Direction extends AbstractResponse {
+public class DirectionResponse extends AbstractResponse {
   
   public enum Comparison {
     DURATION,
@@ -12,15 +12,8 @@ public class Direction extends AbstractResponse {
     DISTANCE
   }
   
-  public enum TravelMode {
-    DRIVING,
-    WALKING,
-    BICYCLING,
-    TRANSIT
-  }
-  
-  public static Direction deserialize(String response) {
-    Direction direction = AbstractResponse.deserialize(Direction.class, response);
+  public static DirectionResponse deserialize(String response) {
+    DirectionResponse direction = AbstractResponse.deserialize(DirectionResponse.class, response);
     for(Route route : direction.routes) {
       route.calcDistance();
       route.calcDuration();

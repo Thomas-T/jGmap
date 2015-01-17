@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.allocab.JGMap.common.TravelMode;
+
 
 public class Step {
   
@@ -15,7 +17,7 @@ public class Step {
   private Point end_location;
   private Polyline polyline;
   private Step[] steps;
-  private Direction.TravelMode travel_mode;
+  private TravelMode travel_mode;
   private String maneuver;
   
   private Segment[] segments;
@@ -119,10 +121,10 @@ public class Step {
   public void setSteps(Step[] steps) {
     this.steps = steps;
   }
-  public Direction.TravelMode getTravel_mode() {
+  public TravelMode getTravel_mode() {
     return travel_mode;
   }
-  public void setTravel_mode(Direction.TravelMode travel_mode) {
+  public void setTravel_mode(TravelMode travel_mode) {
     this.travel_mode = travel_mode;
   }
   public String getManeuver() {

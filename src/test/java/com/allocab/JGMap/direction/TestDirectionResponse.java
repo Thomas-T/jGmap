@@ -3,7 +3,6 @@ package com.allocab.JGMap.direction;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,22 +12,21 @@ import org.junit.Test;
 
 import com.allocab.JGMap.ResourceLoader;
 import com.allocab.JGMap.response.AbstractResponse;
-import com.allocab.JGMap.response.direction.Direction;
-import com.allocab.JGMap.response.direction.Direction.Comparison;
+import com.allocab.JGMap.response.direction.DirectionResponse;
+import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
 import com.allocab.JGMap.response.direction.Leg;
 import com.allocab.JGMap.response.direction.Point;
 import com.allocab.JGMap.response.direction.Route;
 import com.allocab.JGMap.response.direction.Step;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TestDirectionResponse {
   
   @Test
   public void testBuildingCompleteDirection() throws JsonGenerationException, JsonMappingException, IOException {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     Date departureAt = new Date();    
     
@@ -61,18 +59,13 @@ public class TestDirectionResponse {
       dt = dt.plusSeconds(1);
     }
     
-    ObjectMapper objectMapper = new ObjectMapper();
-    StringWriter str = new StringWriter();
-    objectMapper.writeValue(str, points);
-    
-    System.out.println(str.toString());
-    
+    assertEquals(1984, points.size());    
   }
 
   @Test
   public void testPointRetrieval() {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     Date departureAt = new Date();
     
@@ -87,7 +80,7 @@ public class TestDirectionResponse {
   @Test
   public void testSegmentCreation() {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     Date departureAt = new Date();
     
@@ -126,11 +119,7 @@ public class TestDirectionResponse {
   @Test
   public void testGetStepAt() {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
-    
-    Date departureAt = new Date();
-    
-    DateTime questionAt = new DateTime(departureAt);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     Route route = response.getShortestRoute(Comparison.DISTANCE);
     
@@ -183,7 +172,7 @@ public class TestDirectionResponse {
   @Test
   public void testPolylineDecoder() {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     List<Point> points = response.getRoutes()[0].getOverview_polyline().decode();
     assertNotNull(points);
@@ -194,7 +183,7 @@ public class TestDirectionResponse {
   public void testResponseWithWaypoints() {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     assertNotNull(response);
     assertEquals(AbstractResponse.Status.OK, response.getStatus());
         
@@ -213,7 +202,7 @@ public class TestDirectionResponse {
   public void testResponseParsingWithWaypoints() {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_waypoints.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     assertNotNull(response);
     assertEquals(AbstractResponse.Status.OK, response.getStatus());
         
@@ -231,7 +220,7 @@ public class TestDirectionResponse {
   @Test
   public void testResponseParsingMultipleRoutes() {    
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     assertNotNull(response);
     assertEquals(AbstractResponse.Status.OK, response.getStatus());
         
@@ -258,7 +247,7 @@ public class TestDirectionResponse {
   public void testResponseSerialization() throws Exception {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     assertNotNull(response.serialize());
     
@@ -268,7 +257,7 @@ public class TestDirectionResponse {
   public void testResponseSerializationWaypoints() throws Exception {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_waypoints.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     assertNotNull(response.serialize());
     
@@ -278,7 +267,7 @@ public class TestDirectionResponse {
   public void testGetShortestRouteOneRoute() throws Exception {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     assertNotNull(response.getShortestRoute(Comparison.DISTANCE));
     assertNotNull(response.getShortestRoute(Comparison.DURATION));
@@ -290,7 +279,7 @@ public class TestDirectionResponse {
   public void testGetShortestRouteMultipleRoutes() throws Exception {
     
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
-    Direction response = Direction.deserialize(directionStr);
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);
     
     assertNotNull(response.getShortestRoute(Comparison.DISTANCE));
     assertNotNull(response.getShortestRoute(Comparison.DURATION));

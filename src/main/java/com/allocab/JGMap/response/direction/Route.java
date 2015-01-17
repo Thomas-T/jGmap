@@ -2,7 +2,7 @@ package com.allocab.JGMap.response.direction;
 
 import java.util.Date;
 
-import com.allocab.JGMap.response.direction.Direction.Comparison;
+import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
 
 public class Route {
   private String summary;
