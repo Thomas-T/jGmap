@@ -1,10 +1,11 @@
 package com.allocab.JGMap.response.direction;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
 
-public class Route {
+public class Route  implements Serializable{
   private String summary;
   private Leg[] legs;
   private int[] waypoint_order;

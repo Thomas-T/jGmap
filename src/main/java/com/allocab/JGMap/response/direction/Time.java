@@ -1,8 +1,9 @@
 package com.allocab.JGMap.response.direction;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Time {
+public class Time  implements Serializable{
   private Date value;
   private String text;
   private String time_zone;

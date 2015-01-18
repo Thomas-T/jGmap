@@ -1,6 +1,8 @@
 package com.allocab.JGMap.response.direction;
 
-public class Bound {
+import java.io.Serializable;
+
+public class Bound  implements Serializable{
   
   private Point northeast;
   private Point northwest;

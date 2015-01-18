@@ -1,5 +1,6 @@
 package com.allocab.JGMap.request.direction;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Date;
@@ -10,6 +11,11 @@ import com.allocab.JGMap.request.AbstractRequest;
 import com.allocab.JGMap.request.HttpMethod;
 import com.allocab.JGMap.response.direction.DirectionResponse;
 import com.allocab.JGMap.response.direction.Point;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 	
@@ -31,14 +37,17 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 		fr
 	}	
 	
-	public String origin;
-	public String destination;
+	@JsonSerialize(using = Location.LocationSerializer.class)
+	public Location origin;
+	@JsonSerialize(using = Location.LocationSerializer.class)
+	public Location destination;
 	public TravelMode mode = TravelMode.DRIVING;
 	public boolean alternatives;
 	public Avoid avoid;
 	public Language language;
 	public Unit units;
 	public TLD region;
+	@JsonSerialize(using = DepartureTimeSerializer.class)	
 	public Date departure_time;
 	public Date arrival_time;
 	
@@ -52,13 +61,38 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 		return new DirectionRequest();
 	}
 	
+	public DirectionRequest departure_time(Date date) {
+		this.departure_time = date;
+		return this;
+	}
+	
 	public DirectionRequest origin(String origin) {
-		this.origin = origin;
+		this.origin = Location.gen().address(origin);
+		return this;
+	}
+	
+	public DirectionRequest origin(Point origin) {
+		this.origin = Location.gen().point(origin);
+		return this;
+	}
+	
+	public DirectionRequest origin(double lat, double lng) {
+		this.origin = Location.gen().point(lat,lng);
 		return this;
 	}
 	
 	public DirectionRequest destination(String destination) {
-		this.destination = destination;
+		this.destination = Location.gen().address(destination);
+		return this;
+	}
+	
+	public DirectionRequest destination(Point destination) {
+		this.destination = Location.gen().point(destination);
+		return this;
+	}
+	
+	public DirectionRequest destination(double lat, double lng) {
+		this.destination = Location.gen().point(lat, lng);
 		return this;
 	}
 	
@@ -77,7 +111,7 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 		}
 		StringBuilder param;
 		for(String key : map.keySet()) {			
-			Object value = map.get(key);			
+			Object value = map.get(key);
 			if(value == null) {
 				continue;
 			}			
@@ -89,6 +123,15 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 					param.append(value);
 				}				
 			}
+			else if(value instanceof Location) {
+				Location location = (Location)value;
+				if(location.getPoint() != null) {
+					param.append(location.getPoint().getLat()+","+location.getPoint().getLng());
+				}
+				else if(location.getAddress() != null) {
+					param.append(location.getAddress());
+				}
+			}
 			else {
 				param.append(value);
 			}			
@@ -98,30 +141,21 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 		}
 		
 		return parameters.toString();
-		/*
-		try {
-			return URLEncoder.encode(parameters.toString(), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-			return parameters.toString();
-		}
-		*/
-
 	}
 
-	public String getOrigin() {
+	public Location getOrigin() {
 		return origin;
 	}
 
-	public void setOrigin(String origin) {
+	public void setOrigin(Location origin) {
 		this.origin = origin;
 	}
 
-	public String getDestination() {
+	public Location getDestination() {
 		return destination;
 	}
 
-	public void setDestination(String destination) {
+	public void setDestination(Location destination) {
 		this.destination = destination;
 	}
 
@@ -187,6 +221,28 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 
 	public void setArrival_time(Date arrival_time) {
 		this.arrival_time = arrival_time;
+	}
+	
+	public static class DepartureTimeSerializer extends JsonSerializer<Date> {
+
+
+		@Override
+		public void serialize(Date value, JsonGenerator jgen, SerializerProvider provider)
+		        throws IOException, JsonGenerationException {
+			
+			if(value == null) {
+				return;
+			}
+			
+			if(value.before(new Date())) {
+				jgen.writeString("now");
+			}
+			else {
+				jgen.writeNumber(value.getTime());
+			}
+		    
+		}
+
 	}
 	
 }

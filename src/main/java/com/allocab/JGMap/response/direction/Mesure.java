@@ -1,6 +1,8 @@
 package com.allocab.JGMap.response.direction;
 
-public class Mesure {
+import java.io.Serializable;
+
+public class Mesure  implements Serializable{
   private long value;
   private String text;
   public long getValue() {

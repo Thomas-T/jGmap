@@ -1,8 +1,9 @@
 package com.allocab.JGMap.response.direction;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Polyline {
+public class Polyline  implements Serializable{
   private String points;
 
   public String getPoints() {

@@ -9,7 +9,6 @@ import com.allocab.JGMap.request.direction.DirectionRequest;
 import com.allocab.JGMap.response.AbstractResponse.Status;
 import com.allocab.JGMap.response.direction.DirectionResponse;
 import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
-import com.allocab.JGMap.response.direction.Point;
 
 public class TestDirectionRequest {
 

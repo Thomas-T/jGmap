@@ -1,5 +1,6 @@
 package com.allocab.JGMap.response.direction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,7 +9,7 @@ import java.util.List;
 import com.allocab.JGMap.common.TravelMode;
 
 
-public class Step {
+public class Step  implements Serializable{
   
   private String html_instructions;
   private Mesure distance;

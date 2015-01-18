@@ -42,8 +42,18 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 	}	
 	
 	public Response call() {
-		this.url = rootUrl.replace("$SERVICE$", this.request.serviceUrl);
-		this.parameters = this.request.toParameters();		
+		try {
+			URL url = new URL(rootUrl.replace("$SERVICE$", this.request.serviceUrl)+this.request.toParameters());
+			if(AbstractRequest.getApiCryptoKey() != null) {
+				this.url = url.getProtocol() + "://" + url.getHost()+new UrlSigner(AbstractRequest.getApiCryptoKey()).signRequest(url.getPath(), url.getQuery());
+			}
+			else {
+				this.url = url.toString();
+			}	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this.execute(this.request.response);
 	}
 	
@@ -82,7 +92,7 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 	@SuppressWarnings("unchecked")
 	public Response execute(Class<Response> responseClass) {
 		this.fetch();
-		System.out.println("resp class "+responseClass);
+		//System.out.println("resp class "+responseClass);
 		if(Status.PARSED.equals(status)) {			
 			try {
 				java.lang.reflect.Method method = responseClass.getMethod("deserialize", String.class);
@@ -97,7 +107,7 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 	
 	private void fetch() {
         try {
-        	String u = this.url+this.parameters;
+        	String u = this.url;
         	System.out.println("u:"+u);
             URL url = new URL(u);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -120,7 +130,7 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
             	status = Status.FETCH_ERROR;
             }
             
-            System.out.println("fetch status : "+status);
+            //System.out.println("fetch status : "+status);
     
             if(Status.FETCHED.equals(status)) {
             	try {

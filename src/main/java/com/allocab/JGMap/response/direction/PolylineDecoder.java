@@ -1,10 +1,11 @@
 package com.allocab.JGMap.response.direction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PolylineDecoder {
+public class PolylineDecoder  implements Serializable{
 
   public static List<Point> decode(String encoded) {
     List<Point> track = new ArrayList<Point>();

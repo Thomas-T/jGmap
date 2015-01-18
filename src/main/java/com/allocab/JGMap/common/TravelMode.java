@@ -1,6 +1,8 @@
 package com.allocab.JGMap.common;
 
-public enum TravelMode {
+import java.io.Serializable;
+
+public enum TravelMode  implements Serializable{
     DRIVING,
     WALKING,
     BICYCLING,
