@@ -44,4 +44,9 @@ public class Point  implements Serializable{
 
     return (int) distance;
   }
+  
+  @Override
+  public String toString() {
+    return "coords:"+this.lat+","+this.lng;
+  }
 }

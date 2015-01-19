@@ -23,6 +23,21 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 
 public class TestDirectionResponse {
   
+  
+  @Test
+  public void testSegmentRetievalAfterDirectionEnded() throws Exception {
+    String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
+    DirectionResponse response = DirectionResponse.deserialize(directionStr);    
+    
+    Date departureAt = new Date();
+    DateTime dt = new DateTime().plusHours(2);
+    
+    Point point = response.getShortestRoute(Comparison.DISTANCE).getPointAtForDepartureAt(Comparison.DURATION, dt.toDate(), departureAt);
+    assertEquals(48.8897321d, point.getLat(),0.001);
+    assertEquals(2.2418562d, point.getLng(),0.001);     
+  }    
+  
+  
   @Test
   public void testBuildingCompleteDirection() throws JsonGenerationException, JsonMappingException, IOException {
     String directionStr = ResourceLoader.loadString(TestDirectionResponse.class, "/data/direction_alternatives.json");
@@ -59,7 +74,7 @@ public class TestDirectionResponse {
       dt = dt.plusSeconds(1);
     }
     
-    assertEquals(1984, points.size());    
+    assertEquals(1985, points.size());    
   }
 
   @Test

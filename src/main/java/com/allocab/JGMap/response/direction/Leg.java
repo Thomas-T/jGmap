@@ -18,7 +18,7 @@ public class Leg  implements Serializable{
   public transient long secondElapsedInLeg; 
   
   public Step getStepAtDuration(long secondElapsedInLeg) {
-    //System.out.println("seconds elapsed in leg : "+secondElapsedInLeg);
+    System.out.println("seconds elapsed in leg : "+secondElapsedInLeg);
     long secondsAtStepEnd = 0;
     for(Step step : steps) {
       secondsAtStepEnd += step.getDuration().getValue();
@@ -28,7 +28,10 @@ public class Leg  implements Serializable{
         return step;
       }
     }    
-    return steps[steps.length-1];
+    System.out.println("Returning last step");
+    Step step = steps[steps.length-1];
+    step.secondElapsedInStep = secondsAtStepEnd;
+    return step;
   }
   
   public Step[] getSteps() {

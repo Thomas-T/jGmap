@@ -21,12 +21,16 @@ public class Segment  implements Serializable{
   public Point getPositionInSegment(Long secondElapsedInSegment) {
     //System.out.println("seconds elapsed in segment : "+secondElapsedInSegment);
     
-    double prog = 1-((double)secondElapsedInSegment / (double)duration.getValue());
-    if(prog > 1) {
+    double prog = 0;
+    if(secondElapsedInSegment >= duration.getValue()) {
       prog = 1;
     }
+    else {
+      prog = 1-((double)secondElapsedInSegment / (double)duration.getValue());
+    }
+
     
-    //System.out.println("segment prog : "+prog);
+    System.out.println("segment prog : "+prog+" "+secondElapsedInSegment+" "+duration.getValue());
     
     double dLat = (end_location.getLat() - start_location.getLat()) * prog;
     double dLng = (end_location.getLng() - start_location.getLng()) * prog;
