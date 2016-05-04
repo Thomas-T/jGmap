@@ -2,6 +2,8 @@ package com.allocab.JGMap.response.direction;
 
 import java.io.Serializable;
 
+import com.allocab.JGMap.common.Mesure;
+
 public class Leg  implements Serializable{
   private Step[] steps;
   private Mesure distance;

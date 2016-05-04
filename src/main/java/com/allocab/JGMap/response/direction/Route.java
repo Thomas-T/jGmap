@@ -3,6 +3,7 @@ package com.allocab.JGMap.response.direction;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.allocab.JGMap.common.Mesure;
 import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
 
 public class Route  implements Serializable{

@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.allocab.JGMap.common.Mesure;
 import com.allocab.JGMap.common.TravelMode;
 
 

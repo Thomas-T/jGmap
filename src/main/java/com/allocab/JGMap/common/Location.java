@@ -1,4 +1,4 @@
-package com.allocab.JGMap.request.direction;
+package com.allocab.JGMap.common;
 
 import java.io.IOException;
 

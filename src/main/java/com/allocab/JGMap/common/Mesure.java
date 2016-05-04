@@ -1,4 +1,4 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.JGMap.common;
 
 import java.io.Serializable;
 

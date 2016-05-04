@@ -7,7 +7,7 @@ import com.allocab.JGMap.request.direction.DirectionRequest;
 import com.allocab.JGMap.response.direction.DirectionResponse;
 import com.allocab.JGMap.response.direction.Point;
 
-public class DirectionService {
+public class DirectionService implements Service<DirectionRequest, DirectionResponse> {
 	
 	private DirectionRequest request;
 	
@@ -17,6 +17,7 @@ public class DirectionService {
 		return service;
 	}
 	
+	@Override
 	public DirectionResponse call() {
 		Fetcher<DirectionResponse, DirectionRequest> fetcher = Fetcher.gen(request);
 		return fetcher.call();
@@ -57,12 +58,15 @@ public class DirectionService {
 		return this;
 	}
 
+	@Override
 	public DirectionRequest getRequest() {
 		return request;
 	}
 
+	@Override
 	public void setRequest(DirectionRequest request) {
 		this.request = request;
 	}
+
 	
 }
