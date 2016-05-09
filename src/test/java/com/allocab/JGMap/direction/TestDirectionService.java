@@ -21,7 +21,7 @@ public class TestDirectionService {
 		assertNotNull(dr);
 		assertEquals(Status.OK, dr.getStatus());
 		
-		assertEquals(2250, dr.getShortestRoute(Comparison.DISTANCE).getDistance().getValue());		
+		assertEquals(2271, dr.getShortestRoute(Comparison.DISTANCE).getDistance().getValue());		
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class TestDirectionService {
 		assertNotNull(dr);
 		assertEquals(Status.OK, dr.getStatus());
 		
-		assertEquals(2250, dr.getShortestRoute(Comparison.DISTANCE).getDistance().getValue());
+		assertEquals(2271, dr.getShortestRoute(Comparison.DISTANCE).getDistance().getValue());
 		
 		AbstractRequest.setApiClientId(null);
 		AbstractRequest.setApiCryptoKey(null);

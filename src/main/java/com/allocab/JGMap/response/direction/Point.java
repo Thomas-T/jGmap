@@ -2,7 +2,9 @@ package com.allocab.JGMap.response.direction;
 
 import java.io.Serializable;
 
-public class Point  implements Serializable{
+import com.allocab.JGMap.common.Parameterizable;
+
+public class Point  implements Serializable, Parameterizable {
   private double lat;
   private double lng;
   
@@ -48,5 +50,10 @@ public class Point  implements Serializable{
   @Override
   public String toString() {
     return "coords:"+this.lat+","+this.lng;
+  }
+
+  @Override
+  public String toParam() {
+    return this.getLat()+","+this.getLng();
   }
 }

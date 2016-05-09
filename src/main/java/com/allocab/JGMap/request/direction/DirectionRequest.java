@@ -1,9 +1,6 @@
 package com.allocab.JGMap.request.direction;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.Date;
-import java.util.Map;
 
 import com.allocab.JGMap.common.Avoid;
 import com.allocab.JGMap.common.Language;
@@ -11,21 +8,22 @@ import com.allocab.JGMap.common.Location;
 import com.allocab.JGMap.common.TLD;
 import com.allocab.JGMap.common.TravelMode;
 import com.allocab.JGMap.common.Unit;
-import com.allocab.JGMap.common.DepartureTimeSerializer;
+import com.allocab.JGMap.common.serializer.DepartureTimeSerializer;
 import com.allocab.JGMap.request.AbstractRequest;
 import com.allocab.JGMap.request.HttpMethod;
 import com.allocab.JGMap.response.direction.DirectionResponse;
 import com.allocab.JGMap.response.direction.Point;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.allocab.JGMap.common.serializer.LocationSerializer;
 
 public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 	
 
-	@JsonSerialize(using = Location.LocationSerializer.class)
+	@JsonSerialize(using = LocationSerializer.class)
 	public Location origin;
-	@JsonSerialize(using = Location.LocationSerializer.class)
+	@JsonSerialize(using = LocationSerializer.class)
 	public Location destination;
-	public TravelMode mode = TravelMode.DRIVING;
+	public TravelMode mode;
 	public boolean alternatives;
 	public Avoid avoid;
 	public Language language;

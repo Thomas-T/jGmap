@@ -1,0 +1,22 @@
+{
+   "destination_addresses" : [ "102 Avenue Maréchal de Saxe, 69003 Lyon, France" ],
+   "origin_addresses" : [ "11 Rue de l'Annonciade, 69001 Lyon, France" ],
+   "rows" : [
+      {
+         "elements" : [
+            {
+               "distance" : {
+                  "text" : "1,8 miles",
+                  "value" : 2977
+               },
+               "duration" : {
+                  "text" : "12 minutes",
+                  "value" : 732
+               },
+               "status" : "OK"
+            }
+         ]
+      }
+   ],
+   "status" : "OK"
+}

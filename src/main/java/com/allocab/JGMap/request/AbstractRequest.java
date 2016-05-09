@@ -2,9 +2,11 @@ package com.allocab.JGMap.request;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.List;
 import java.util.Map;
 
 import com.allocab.JGMap.common.Location;
+import com.allocab.JGMap.common.Parameterizable;
 import com.allocab.JGMap.response.AbstractResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,35 +43,32 @@ abstract public class AbstractRequest<Response extends AbstractResponse> {
     StringBuilder param;
     for(String key : map.keySet()) {      
       Object value = map.get(key);
-      if(value == null) {
+      if(value == null || value.equals("")) {
         continue;
-      }     
+      } 
+      if(value instanceof List<?>) {
+        List<?> list = (List<?>) value;
+        if(list.size() == 0) {
+          continue;
+        }
+      }
       param = new StringBuilder().append(key).append("=");
-      if(value instanceof String) {
-        try {
-          param.append(URLEncoder.encode((String)value, "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-          param.append(value);
-        }       
-      }
-      else if(value instanceof Location) {
-        Location location = (Location)value;
-        if(location.getPoint() != null) {
-          param.append(location.getPoint().getLat()+","+location.getPoint().getLng());
-        }
-        else if(location.getAddress() != null) {
-          param.append(location.getAddress());
-        }
-      }
-      else {
-        param.append(value);
-      }     
+      param.append(value);
       param.append("&");
       
       parameters.append(param);
     }
     
-    return parameters.toString();
+    String params = parameters.toString();
+    if(params.endsWith("&")) {
+      params = params.substring(0, params.length()-1);
+    }
+    
+    if(params.equals("?")) {
+      return "";
+    }
+    
+    return params.toLowerCase();
   }
 	
 	public HttpMethod getHttpMethod() {
