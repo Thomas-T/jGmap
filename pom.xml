@@ -4,17 +4,17 @@
 
   <groupId>com.allocab</groupId>
   <artifactId>JGMap</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>JGMap</name>
+  <name>jGmap</name>
   <url>http://maven.apache.org</url>
 
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>1.7</jdk.version>
   </properties>
-  
+
   <distributionManagement>
 	  <repository>
 	     <id>nexus-snapshot</id>
@@ -54,12 +54,12 @@
     	<version>2.3.8</version>
     </dependency>
   </dependencies>
-  
-  
+
+
 	<build>
 		<finalName>jGMap</finalName>
 		<plugins>
- 
+
 			<!-- download source code in Eclipse, best practice -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -70,7 +70,7 @@
 					<downloadJavadocs>false</downloadJavadocs>
 				</configuration>
 			</plugin>
- 
+
 			<!-- Set a compiler level -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -81,7 +81,7 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
- 
+
 			<!-- Make this jar executable -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -98,8 +98,8 @@
 				  </archive>
 				</configuration>
 			</plugin>
- 
+
 		</plugins>
-	</build>  
-  
+	</build>
+
 </project>
