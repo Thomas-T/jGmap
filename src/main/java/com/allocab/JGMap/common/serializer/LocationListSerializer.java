@@ -1,8 +1,6 @@
 package com.allocab.jGmap.common.serializer;
 
 import java.io.IOException;
-import java.util.Date;
-
 import com.allocab.jGmap.request.distancematrix.LocationList;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;

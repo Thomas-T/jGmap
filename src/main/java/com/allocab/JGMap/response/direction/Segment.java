@@ -5,6 +5,10 @@ import java.io.Serializable;
 import com.allocab.jGmap.common.Mesure;
 
 public class Segment  implements Serializable{
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private Point start_location;
   private Point end_location;
   private Mesure duration;

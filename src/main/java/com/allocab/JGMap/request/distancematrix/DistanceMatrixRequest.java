@@ -10,7 +10,6 @@ import com.allocab.jGmap.common.serializer.DepartureTimeSerializer;
 import com.allocab.jGmap.common.serializer.LocationListSerializer;
 import com.allocab.jGmap.request.AbstractRequest;
 import com.allocab.jGmap.request.HttpMethod;
-import com.allocab.jGmap.response.direction.DirectionResponse;
 import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

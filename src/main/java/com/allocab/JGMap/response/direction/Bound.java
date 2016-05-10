@@ -2,6 +2,7 @@ package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Bound  implements Serializable{
   
   private Point northeast;

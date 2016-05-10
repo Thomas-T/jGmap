@@ -2,8 +2,6 @@ package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import com.allocab.jGmap.common.Mesure;
@@ -12,6 +10,10 @@ import com.allocab.jGmap.common.TravelMode;
 
 public class Step  implements Serializable{
   
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private String html_instructions;
   private Mesure distance;
   private Mesure duration;

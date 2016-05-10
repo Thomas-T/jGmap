@@ -5,6 +5,10 @@ import java.io.Serializable;
 import com.allocab.jGmap.common.Parameterizable;
 
 public class Point  implements Serializable, Parameterizable {
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private double lat;
   private double lng;
   
