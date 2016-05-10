@@ -2,6 +2,8 @@ language: java
 
 env:
   global:
+    #GPG_KEY_NAME
+    - secure: "DlMCw4AEgXebtf59Wroi8TIxNGzz/L1DIgZ0pon5X2/onNe2c58CQbMhPP8VzizdCZp2YsDftSolt+GuIRPKUQz4HZAS9BN8SeYQ5gaXnTr59lzS/EQNF7spMaLzsH4alel3yXBLOkdHkyfUqxI9wbVpFCg7nrM/WsAdXOLUF+9EbHcyvC1jGoMHaAcR/GLWPEOsxBBC1qfp9VmCDqv7bZoEEcMTGPfPS7jf8YmpTDOz4yX0Ep8fvKDR7OiEKDk+qng/1HlQzFxKlBlUkkxiV0ut3fDebboWYgFUC+X79PbnTg+FqnUjMhYjpILpY4xgRU1votJaA7Z+hu+uR/G3I3H6ImBt96V1fQ0YXl5vAq6oo+aXKwtOsLl+IqzhaM7I80+C4Qt8OALBXrQ/lAXODE1FM9ETL7KfNfPVLucf8pcO6TrQbA5UAIDrNJSEVgmq7A3onUUDcA/thZkzT8A2Q5DAaVvzvf7GCDrdeNoSELXWKGdWZkJ9m23MjhPzfzeq3ns4JZzHZao7FNpf+Hq3SeJkxPE9juoBpckxzrw+wOt+07MZnOPPKGYK70HiYB4pg2a5iMkKxSHWWR7Pbxd+5oGqMxLzQ7Ua2YklVTjCjNQSgoUdfUMF3NoBZqbjLboky8TEzgDtIHT+OrPUF9veIJ8TTZUq5bhc1JfRwVIb9LE="
     #GPG_PASS
     - secure: "DeQw4AfPj44vYaX32Cq2cDQIY1W7zPpFc4g3MyBv5N44Dp795lyEDXSBGg9yGs4mhbqD4UZ+9ItLWzhZcN+RZXxsEvgGl5xdr3enJf3oK+4nYLKcWkAfaWNrzpU6SOQ4ta5qPawkZZ3NDaElnkckLl3edGSXfk1qilCvGtynxR0Ys8+QfF9k0La15fIwJv2Eth4H/xuyw2wSrZgLdXW9CuMTcedesnn2Eh/xeF/lV0Z2bAfTFTW5xZa9CqzmTTnOPFkzGb+WIrngR3Inq2hQCrUan6k0vx/8gqsgusUGPhYWGeHxnyhvB1erMNnG9XfdyX0X1F+cs3SeS4wg3uG1XAJSvFRIn/kP5f8sIq4bt2/xtLbNoZ/m7gxKI6gosl1Uw+Bf/tZfKanv4KtjxE5ZAy9yHpgYw3FUsq/RADbtE42YdVTXzPw4XuJHXExSJQhLRYJ84DPeAnVAgh8X2IbgB3WlH0WxNEIUHyE/iMQUVLmmcTcCf3dgAhex6agioEA8IrwFbY6TdXMiOk3n0JuEABcUD8UvtKylG+gILQbUr3OSD83iYBFs0iFxo3M7G0wTwRN1y1+bOiMvkiOmV0KlOImu7XCXgeUl5JmnhIdrz/33mA5fTVH7/rgIppo655VN8L4+dgc6RxpfEUPnZ/OHe884RIbWC5AZPnXSDLs0Aj4="
     #OSSRH_USER
@@ -17,5 +19,5 @@ cache:
     - ~/.m2/repository
 
 after_success:
-  #- ./cd/before-deploy.sh
+  - ./cd/before-deploy.sh
   - ./cd/deploy.sh
