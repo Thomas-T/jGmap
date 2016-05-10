@@ -1,4 +1,4 @@
 language: java
 
-after_success:
-  - "mvn deploy -DskipTests --settings deploy-settings.xml"
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V --settings deploy-settings.xml
+after_success: mvn deploy -DskipTests --settings deploy-settings.xml
