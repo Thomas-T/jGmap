@@ -57,7 +57,7 @@ public class Route  implements Serializable{
         return leg;
       }
     }  
-    System.out.println("returngin last leg");
+    //System.out.println("returngin last leg");
     
     Leg leg =legs[legs.length-1];
     leg.secondElapsedInLeg = elapsedSeconds;    

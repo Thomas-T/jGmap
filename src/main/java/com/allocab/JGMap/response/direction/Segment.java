@@ -36,7 +36,7 @@ public class Segment  implements Serializable{
     }
 
     
-    System.out.println("segment prog : "+prog+" "+secondElapsedInSegment+" "+duration.getValue());
+    //System.out.println("segment prog : "+prog+" "+secondElapsedInSegment+" "+duration.getValue());
     
     double dLat = (end_location.getLat() - start_location.getLat()) * prog;
     double dLng = (end_location.getLng() - start_location.getLng()) * prog;
