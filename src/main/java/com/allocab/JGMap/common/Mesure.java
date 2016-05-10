@@ -2,6 +2,7 @@ package com.allocab.JGMap.common;
 
 import java.io.Serializable;
 
+
 @SuppressWarnings("serial")
 public class Mesure  implements Serializable{
   private long value;

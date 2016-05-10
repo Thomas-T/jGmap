@@ -38,7 +38,6 @@ public class TestDirectionService {
 		assertTrue(dr.getShortestRoute(Comparison.DURATION).getDistance().getValue() > 2200);
 		assertTrue(dr.getShortestRoute(Comparison.DURATION_IN_TRAFFIC).getDistance().getValue() > 2200);
 		
-		
 		AbstractRequest.setApiClientId(null);
 		AbstractRequest.setApiCryptoKey(null);
 	}

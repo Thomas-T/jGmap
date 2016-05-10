@@ -1,10 +1,12 @@
 package com.allocab.JGMap.common;
 
+
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import com.allocab.JGMap.response.direction.Point;
+
 
 @SuppressWarnings("serial")
 public class Location implements Parameterizable, Serializable {
