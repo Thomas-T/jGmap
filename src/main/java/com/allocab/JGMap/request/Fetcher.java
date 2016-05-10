@@ -1,4 +1,4 @@
-package com.allocab.JGMap.request;
+package com.allocab.jGmap.request;
 
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import com.allocab.JGMap.response.AbstractResponse;
+import com.allocab.jGmap.response.AbstractResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Fetcher<Response extends AbstractResponse, Request extends AbstractRequest<Response>> {

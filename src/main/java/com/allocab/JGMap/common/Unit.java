@@ -1,4 +1,4 @@
-package com.allocab.JGMap.common;
+package com.allocab.jGmap.common;
 
 public enum Unit {
   metric, imperial

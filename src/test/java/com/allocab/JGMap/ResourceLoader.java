@@ -1,4 +1,4 @@
-package com.allocab.JGMap;
+package com.allocab.jGmap;
 
 import java.io.IOException;
 import java.io.InputStream;

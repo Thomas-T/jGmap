@@ -1,4 +1,4 @@
-package com.allocab.JGMap.direction;
+package com.allocab.jGmap.direction;
 
 import static org.junit.Assert.*;
 
@@ -10,14 +10,14 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import com.allocab.JGMap.ResourceLoader;
-import com.allocab.JGMap.response.AbstractResponse;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
-import com.allocab.JGMap.response.direction.Leg;
-import com.allocab.JGMap.response.direction.Point;
-import com.allocab.JGMap.response.direction.Route;
-import com.allocab.JGMap.response.direction.Step;
+import com.allocab.jGmap.ResourceLoader;
+import com.allocab.jGmap.response.AbstractResponse;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.direction.DirectionResponse.Comparison;
+import com.allocab.jGmap.response.direction.Leg;
+import com.allocab.jGmap.response.direction.Point;
+import com.allocab.jGmap.response.direction.Route;
+import com.allocab.jGmap.response.direction.Step;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 

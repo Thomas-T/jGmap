@@ -1,10 +1,10 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import com.allocab.JGMap.common.Mesure;
-import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
+import com.allocab.jGmap.common.Mesure;
+import com.allocab.jGmap.response.direction.DirectionResponse.Comparison;
 
 public class Route  implements Serializable{
   private String summary;

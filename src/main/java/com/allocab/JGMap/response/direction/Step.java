@@ -1,4 +1,4 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.allocab.JGMap.common.Mesure;
-import com.allocab.JGMap.common.TravelMode;
+import com.allocab.jGmap.common.Mesure;
+import com.allocab.jGmap.common.TravelMode;
 
 
 public class Step  implements Serializable{

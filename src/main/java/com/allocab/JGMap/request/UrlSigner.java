@@ -1,4 +1,4 @@
-package com.allocab.JGMap.request;
+package com.allocab.jGmap.request;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -1,10 +1,10 @@
-package com.allocab.JGMap.utils;
+package com.allocab.jGmap.utils;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.allocab.JGMap.ResourceLoader;
+import com.allocab.jGmap.ResourceLoader;
 
 public class TestResourceLoader {
 

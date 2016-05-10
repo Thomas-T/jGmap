@@ -1,4 +1,4 @@
-package com.allocab.JGMap.response;
+package com.allocab.jGmap.response;
 
 import java.io.IOException;
 import java.io.Serializable;

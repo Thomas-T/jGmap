@@ -1,9 +1,9 @@
-package com.allocab.JGMap.response.distancematrix;
+package com.allocab.jGmap.response.distancematrix;
 
 import java.util.List;
 
-import com.allocab.JGMap.common.Mesure;
-import com.allocab.JGMap.response.AbstractResponse;
+import com.allocab.jGmap.common.Mesure;
+import com.allocab.jGmap.response.AbstractResponse;
 
 @SuppressWarnings("serial")
 public class DistanceMatrixResponse extends AbstractResponse {

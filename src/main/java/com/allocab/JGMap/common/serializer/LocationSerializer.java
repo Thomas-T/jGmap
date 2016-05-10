@@ -1,8 +1,8 @@
-package com.allocab.JGMap.common.serializer;
+package com.allocab.jGmap.common.serializer;
 
 import java.io.IOException;
 
-import com.allocab.JGMap.common.Location;
+import com.allocab.jGmap.common.Location;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

@@ -1,7 +1,7 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 
-import com.allocab.JGMap.response.AbstractResponse;
+import com.allocab.jGmap.response.AbstractResponse;
 
 @SuppressWarnings("serial")
 public class DirectionResponse extends AbstractResponse {

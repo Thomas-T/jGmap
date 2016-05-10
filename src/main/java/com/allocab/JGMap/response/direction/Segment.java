@@ -1,8 +1,8 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 
-import com.allocab.JGMap.common.Mesure;
+import com.allocab.jGmap.common.Mesure;
 
 public class Segment  implements Serializable{
   private Point start_location;

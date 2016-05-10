@@ -1,17 +1,17 @@
-package com.allocab.JGMap.request.distancematrix;
+package com.allocab.jGmap.request.distancematrix;
 
 import java.util.Date;
 
-import com.allocab.JGMap.common.Language;
-import com.allocab.JGMap.common.Location;
-import com.allocab.JGMap.common.TravelMode;
-import com.allocab.JGMap.common.Unit;
-import com.allocab.JGMap.common.serializer.DepartureTimeSerializer;
-import com.allocab.JGMap.common.serializer.LocationListSerializer;
-import com.allocab.JGMap.request.AbstractRequest;
-import com.allocab.JGMap.request.HttpMethod;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.distancematrix.DistanceMatrixResponse;
+import com.allocab.jGmap.common.Language;
+import com.allocab.jGmap.common.Location;
+import com.allocab.jGmap.common.TravelMode;
+import com.allocab.jGmap.common.Unit;
+import com.allocab.jGmap.common.serializer.DepartureTimeSerializer;
+import com.allocab.jGmap.common.serializer.LocationListSerializer;
+import com.allocab.jGmap.request.AbstractRequest;
+import com.allocab.jGmap.request.HttpMethod;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class DistanceMatrixRequest extends AbstractRequest<DistanceMatrixResponse>{
