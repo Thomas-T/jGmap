@@ -9,4 +9,4 @@ env:
 install:
   - "mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V  --settings deploy-settings.xml"
 after_success:
-  - "[[ ${TRAVIS_PULL_REQUEST} == 'false' ]] && mvn deploy -DskipTests --settings deploy-settings.xml"
+  - "mvn deploy -DskipTests --settings deploy-settings.xml"
