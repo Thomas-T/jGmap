@@ -1,6 +1,10 @@
 language: java
 
+env:
+  global:
+    - "O1GqyLgpr9kuPs+3YkzASWmz0rP51WgSl8Qagn7E3L9qE9fvNo8oe4XwwgrsyJwD8AlNkla/TWgHtWd4uRFKG6g9bcdlQ+A9cBWUgOfUinGD6tamvG9T+XJ75+g0riPkb1sxEFGgM1Oz6L6pna3cOdizbhGfMjkKe1br597ZARhRF8h48SjFs1lC7w+PGKfK0Nsx3gUCqocYD7LTVSWCMcIEGuwMPoDiWfjO0ubl0qPtPyKELiM5nxH2md3u6obM2x12zU2y3HrVI4L66WucJ14vneK31ueMz8mYMmhl1n1Glg25vwf2SB5nwTy70XjAlUbY7Mr+oQKo+LF1kiyaQYeu2fWUcmaPEVzVtkTX/m3hC7FDPeldIXmlsdya5ZIq0JbHSX2iySljSh4X+Xe0PkKCn7PO/niMlpSpYQmfLMAF9LIUvMMC+3NUyF4P5c9eMMoOSxDE91g/zbVnzKvZ1HX/as+ONq+aDnZAgBQ3OPi6PyLBCwxiSgYtC9/0CfPjAGwnXZv3B2IyOzGaSyiZ5bP11B9y9jnOqN22Cp1Beh84NJzwtJDuyFanLMVPZQwOSkCaNJkmRXQiV5SgV3aVBY8J4sHccq1K9SXd5J26MCHOh2H2ZxN2Nyb9vK0D74qUBnbGW8d7MBLu8HUSjK2bsHLMHTBeRgEAWbCL2GN/YwI="
+
 install:
-  - "mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V"
+  - "mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V  --settings deploy-settings.xml"
 after_success:
-  - "mvn deploy -DskipTests --settings deploy-settings.xml"
+  - "[[ ${TRAVIS_PULL_REQUEST} == 'false' ]] && mvn deploy -DskipTests --settings deploy-settings.xml"
