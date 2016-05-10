@@ -1,1 +1,4 @@
 language: java
+
+after_success:
+  - "mvn deploy -DskipTests --settings etc/deploy-settings.xml"
