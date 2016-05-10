@@ -1,0 +1,65 @@
+{
+   "destination_addresses" : [
+      "102 Avenue Maréchal de Saxe, 69003 Lyon, France",
+      "19 Rue de la Viabert, 69006 Lyon, France"
+   ],
+   "origin_addresses" : [
+      "19 Rue de la Viabert, 69006 Lyon, France",
+      "102 Avenue Maréchal de Saxe, 69003 Lyon, France"
+   ],
+   "rows" : [
+      {
+         "elements" : [
+            {
+               "distance" : {
+                  "text" : "2,3 km",
+                  "value" : 2272
+               },
+               "duration" : {
+                  "text" : "10 minutes",
+                  "value" : 606
+               },
+               "status" : "OK"
+            },
+            {
+               "distance" : {
+                  "text" : "1 m",
+                  "value" : 0
+               },
+               "duration" : {
+                  "text" : "1 minute",
+                  "value" : 0
+               },
+               "status" : "OK"
+            }
+         ]
+      },
+      {
+         "elements" : [
+            {
+               "distance" : {
+                  "text" : "1 m",
+                  "value" : 0
+               },
+               "duration" : {
+                  "text" : "1 minute",
+                  "value" : 0
+               },
+               "status" : "OK"
+            },
+            {
+               "distance" : {
+                  "text" : "2,2 km",
+                  "value" : 2233
+               },
+               "duration" : {
+                  "text" : "8 minutes",
+                  "value" : 508
+               },
+               "status" : "OK"
+            }
+         ]
+      }
+   ],
+   "status" : "OK"
+}
