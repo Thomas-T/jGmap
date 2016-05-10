@@ -1,4 +1,9 @@
 language: java
 
+addons:
+  apt:
+    packages:
+    - gpg
+
 after_success:
   - "mvn deploy -DskipTests --settings etc/deploy-settings.xml"
