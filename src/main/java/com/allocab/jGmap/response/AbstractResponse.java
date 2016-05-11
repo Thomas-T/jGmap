@@ -40,11 +40,9 @@ public abstract class AbstractResponse implements Serializable {
     objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);    
     try {
       return objectMapper.readValue(response, clazz);
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+    } catch (Exception e) {
+      return null;
     }
-    return null;
   }
   
   public String serialize() throws Exception {

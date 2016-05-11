@@ -14,6 +14,59 @@ import com.allocab.jGmap.common.Unit;
 import com.allocab.jGmap.request.distancematrix.DistanceMatrixRequest;
 
 public class DistanceMatrixRequestTest {
+	
+	@Test
+	public void testAddDestination() {
+		Location location = Location.gen().address("Empire State Building");
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.addDestination(location));
+		assertSame(location, req.destinations.get(0));
+	}
+	
+	@Test
+	public void testAddOrigin() {
+		Location location = Location.gen().address("Empire State Building");
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.addOrigin(location));
+		assertSame(location, req.origins.get(0));
+	}
+	
+	@Test
+	public void testArrivalTime() {
+		Date arrivalTime = new Date();
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.arrivalTime(arrivalTime));
+		assertEquals(arrivalTime.getTime(), req.arrival_time.getTime());	
+	}
+	
+	@Test
+	public void testDepartureTime() {
+		Date departureTime = new Date();
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.departureTime(departureTime));
+		assertEquals(departureTime.getTime(), req.departure_time.getTime());	
+	}
+	
+	@Test
+	public void testUnits() {		
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.units(Unit.metric));
+		assertEquals(Unit.metric, req.units);	
+	}
+	
+	@Test
+	public void testLanguage() {		
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.language(Language.fr));
+		assertEquals(Language.fr, req.language);	
+	}
+	
+	@Test
+	public void testMode() {		
+		DistanceMatrixRequest req = DistanceMatrixRequest.gen();
+		assertSame(req, req.mode(TravelMode.TRANSIT));
+		assertEquals(TravelMode.TRANSIT, req.mode);	
+	}
   
   @Test
   public void testParameterizableTest() {

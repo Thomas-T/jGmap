@@ -1,5 +1,11 @@
 #Google Maps WebServices for JAVA
+
 Allow you to consume Google Maps WebServices in your JAVA project. This library is compatible with Google Appengine (no use of HTTPOK or async libs).
+
+
+Master | [![Build Status](https://travis-ci.org/Thomas-T/jGmap.svg?branch=master)](https://travis-ci.org/Thomas-T/jGmap) | [![Coverage Status](https://coveralls.io/repos/github/Thomas-T/jGmap/badge.svg?branch=master)](https://coveralls.io/github/Thomas-T/jGmap?branch=master)
+----|----|----
+*Develop* | [![Build Status](https://travis-ci.org/Thomas-T/jGmap.svg?branch=master)](https://travis-ci.org/Thomas-T/jGmap) | [![Coverage Status](https://coveralls.io/repos/github/Thomas-T/jGmap/badge.svg?branch=develop)](https://coveralls.io/github/Thomas-T/jGmap?branch=develop)
 
 ## Supported Services
 Currently only 2 services are supported
