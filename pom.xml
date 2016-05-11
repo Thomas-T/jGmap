@@ -7,8 +7,31 @@
   <version>1.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+
   <name>jGmap</name>
-  <url>http://maven.apache.org</url>
+  <description>Library for consuming Google Maps Webservices. Google Appengine Compatible</description>
+  <url>https://github.com/Thomas-T/jGmap</url>
+  <licenses>
+      <license>
+          <name>MIT License</name>
+          <url>http://www.opensource.org/licenses/mit-license.php</url>
+          <distribution>repo</distribution>
+      </license>
+  </licenses>
+
+  <scm>
+      <url>https://github.com/Thomas-T/jGmap</url>
+      <connection>scm:git:git://github.com/Thomas-T/jGmap.git</connection>
+      <developerConnection>scm:git:git@github.com:Thomas-T/jGmap.git</developerConnection>
+  </scm>
+
+  <developers>
+      <developer>
+          <id>username</id>
+          <name>Thomas Tiercelin</name>
+          <email>t.tiercelin@gmail.com</email>
+      </developer>
+  </developers>
 
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
