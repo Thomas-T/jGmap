@@ -106,7 +106,7 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 	private void fetch() {
         try {
         	String u = this.url;
-        	System.out.println("u:"+u);
+        	//System.out.println("u:"+u);
             URL url = new URL(u);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             if(HttpMethod.POST.equals(method)) {
