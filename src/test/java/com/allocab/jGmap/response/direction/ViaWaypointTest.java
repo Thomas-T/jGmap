@@ -18,7 +18,7 @@ public class ViaWaypointTest {
 	public void testGetStepIndex() {
 		ViaWaypoint wp = new ViaWaypoint();
 		wp.setStep_index(1);
-		assertSame(1, wp.getStep_index());
+		assertEquals(1, wp.getStep_index());
 	}
 	
 	@Test
