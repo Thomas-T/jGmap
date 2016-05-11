@@ -16,7 +16,7 @@ import com.allocab.jGmap.response.direction.Point;
  */
 public class DirectionService implements Service<DirectionRequest, DirectionResponse> {
 	
-	private DirectionRequest request;
+	protected DirectionRequest request;
 	
 	/**
 	 * Generate the @DirectionService

@@ -13,7 +13,7 @@ import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse;
 public class DistanceMatrixService implements Service<DistanceMatrixRequest, DistanceMatrixResponse> {
 
   
-  private DistanceMatrixRequest request;
+  protected DistanceMatrixRequest request;
   
   public static DistanceMatrixService gen() {
     DistanceMatrixService service = new DistanceMatrixService();    

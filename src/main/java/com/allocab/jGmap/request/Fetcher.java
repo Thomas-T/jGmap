@@ -23,13 +23,13 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 		PARSE_ERROR
 	}
 	
-	private Status status;
-	private String url;
-	private String responseString;
-	private HttpMethod method = HttpMethod.GET;	
-	private Object payload;
+	protected Status status;
+	protected String url;
+	protected String responseString;
+	protected HttpMethod method = HttpMethod.GET;	
+	protected Object payload;
 	
-	private Request request;
+	protected Request request;
 	
 	public static <Resp extends AbstractResponse, Req extends AbstractRequest<Resp>> Fetcher<Resp,Req> gen(Req request) {
 		return new Fetcher<>(request);
@@ -39,24 +39,33 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 		this.request = request;
 	}	
 	
-	public Response call() {
+	public static String genUrl(String rootUrl, String serviceUrl, String parameters, String cryptoKey) {
 		try {
-			URL url = new URL(rootUrl.replace("$SERVICE$", this.request.serviceUrl)+this.request.toParameters());
-			if(AbstractRequest.getApiCryptoKey() != null) {
-				this.url = url.getProtocol() + "://" + url.getHost()+new UrlSigner(AbstractRequest.getApiCryptoKey()).signRequest(url.getPath(), url.getQuery());
+			URL url = new URL(rootUrl.replace("$SERVICE$", serviceUrl)+parameters);
+			if(cryptoKey != null) {
+				return url.getProtocol() + "://" + url.getHost()+new UrlSigner(cryptoKey).signRequest(url.getPath(), url.getQuery());
 			}
 			else {
-				this.url = url.toString();
-			}	
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				return url.toString();
+			}					
 		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public Response call() {		
+		if(this.request == null) return null;
+		
+		this.url = Fetcher.genUrl(rootUrl, this.request.serviceUrl, this.request.toParameters(), AbstractRequest.getApiCryptoKey());
+		if(url == null) return null;
+		
 		return this.execute(this.request.response);
 	}
 	
 	public Status getStatus() {
-		return status;
+		return this.status;
 	}
 
 	public void setStatus(Status status) {

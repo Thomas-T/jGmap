@@ -10,7 +10,7 @@ env:
     - secure: "BR9KBvk8Mx5DFm7ypXl1J+jO+rOi36WMA/mIT04KLHjMPYCZIzeY7CD0kNMfEuUUIXPkqP2J1qvEjYnwjLqe3+zsHleXNaPbV5zhxik7gTFqo3qGUj6FDzFdSsBbZuj+0ZZ2qlAl+DWEiNfYS36178G7OQekl41slurOlDukQTzCFifm6ZDqKhtHF25m1/dKar9NxAho30Y0PGLEC8OhOIOHDplgrZhuX9Y61KdEhzh9SABpfYBPmkghveeyCenhk6IljFYi/JonIEbioDgz5ABUZv05PcbK4lKr5GZRzaEAbzjG4+IGoQM4ghmD5hz9xBTjpeEEU+noTcjwh5Gceg7Vxf60+h7ZaZhlZR/4nS0eJ0juf+O8KhndfNRpBWH+UPbI48gch9vTKS82T5F3NfSBBvMgb7224Ed5Hq+02jdvGteAI5VuYMUop/aICkvCDhhZFlakCGxVgNg8pHz9TgOBu6Nxtd0WO+jdEjnXhOOvmNpZX0sAimyYB7EktGe4lX+F8VEF2HNX1eJ4J/lH0KDvywNgs+Rd2LUP5okITKciZ0iuP/BETk4saWdHGdtA3OA6grtXwG0YPPXWl9TfPYWqk3dV0GHFZfNpC50WhBqSxiibSY9lDqCQFDJwDwltaqpvv1wLxjNbQFI4bqa3kn6tbDPJlRAnXgnr1FLSE30="
 
 install: mvn install -P !build-extras -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script: mvn test -P !build-extras -B
+script: mvn -DcoberturaFormat=xml cobertura:cobertura coveralls:report -P !build-extras -B
 
 cache:
   directories:
