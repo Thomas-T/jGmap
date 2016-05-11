@@ -23,11 +23,11 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 		PARSE_ERROR
 	}
 	
-	private Status status;
-	private String url;
-	private String responseString;
-	private HttpMethod method = HttpMethod.GET;	
-	private Object payload;
+	protected Status status;
+	protected String url;
+	protected String responseString;
+	protected HttpMethod method = HttpMethod.GET;	
+	protected Object payload;
 	
 	protected Request request;
 	
@@ -40,36 +40,32 @@ public class Fetcher<Response extends AbstractResponse, Request extends Abstract
 	}	
 	
 	public static String genUrl(String rootUrl, String serviceUrl, String parameters, String cryptoKey) {
-		String path = null;
 		try {
 			URL url = new URL(rootUrl.replace("$SERVICE$", serviceUrl)+parameters);
 			if(cryptoKey != null) {
-				path = url.getProtocol() + "://" + url.getHost()+new UrlSigner(cryptoKey).signRequest(url.getPath(), url.getQuery());
+				return url.getProtocol() + "://" + url.getHost()+new UrlSigner(cryptoKey).signRequest(url.getPath(), url.getQuery());
 			}
 			else {
-				path = url.toString();
+				return url.toString();
 			}					
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}
-		return path;
 	}
 	
 	public Response call() {		
-		if(this.request == null) {
-			return null;
-		}
+		if(this.request == null) return null;
+		
 		this.url = Fetcher.genUrl(rootUrl, this.request.serviceUrl, this.request.toParameters(), AbstractRequest.getApiCryptoKey());
-		if(url == null) {
-			return null;
-		}
+		if(url == null) return null;
+		
 		return this.execute(this.request.response);
 	}
 	
 	public Status getStatus() {
-		return status;
+		return this.status;
 	}
 
 	public void setStatus(Status status) {
