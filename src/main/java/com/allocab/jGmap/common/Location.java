@@ -52,7 +52,7 @@ public class Location implements Parameterizable, Serializable {
     }
     try {
       return URLEncoder.encode(this.getAddress(), "UTF-8");
-    } catch (UnsupportedEncodingException e) {
+    } catch (Exception e) {
       return null;
     }
   }

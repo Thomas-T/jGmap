@@ -16,7 +16,7 @@ public class Segment  implements Serializable{
   
   public transient long secondElapsedInSegment;
   
-  private Segment() {}
+  protected Segment() {}
   
   public Segment(Point start_location, Point end_location) {
     this.start_location = start_location;
