@@ -78,7 +78,7 @@ public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 		return this;
 	}
 	
-	public DirectionRequest destination(boolean alternatives) {
+	public DirectionRequest alternatives(boolean alternatives) {
 		this.alternatives = alternatives;
 		return this;
 	}
