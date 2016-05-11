@@ -10,26 +10,26 @@ import com.allocab.jGmap.response.direction.DirectionResponse;
 public class FetcherTest {
 
 	public void testGetPayload() {
-		Fetcher<?,?> f = new Fetcher<>(null);
+		Fetcher<DirectionResponse, DirectionRequest> f = new Fetcher<>(null);
 		Object o = new Object();
 		f.setPayload(o);
 		assertSame(o, f.getPayload());
 	}	
 	
 	public void testGetMethod() {
-		Fetcher<?,?> f = new Fetcher<>(null);
+		Fetcher<DirectionResponse, DirectionRequest> f = new Fetcher<>(null);
 		f.setMethod(HttpMethod.DELETE);
 		assertEquals(HttpMethod.DELETE, f.getMethod());
 	}
 	
 	public void testGetStatus() {
-		Fetcher<?,?> f = new Fetcher<>(null);
+		Fetcher<DirectionResponse, DirectionRequest> f = new Fetcher<>(null);
 		f.setStatus(Fetcher.Status.FETCH_ERROR);
 		assertEquals(Fetcher.Status.FETCH_ERROR, f.getStatus());
 	}
 	
 	public void testGetResponseString() {
-		Fetcher<?,?> f = new Fetcher<>(null);
+		Fetcher<DirectionResponse, DirectionRequest> f = new Fetcher<>(null);
 		f.setResponseString("caca");
 		assertEquals("caca", f.getResponseString());
 	}
