@@ -1,10 +1,14 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 
-import com.allocab.JGMap.common.Mesure;
+import com.allocab.jGmap.common.Mesure;
 
 public class Segment  implements Serializable{
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private Point start_location;
   private Point end_location;
   private Mesure duration;
@@ -32,7 +36,7 @@ public class Segment  implements Serializable{
     }
 
     
-    System.out.println("segment prog : "+prog+" "+secondElapsedInSegment+" "+duration.getValue());
+    //System.out.println("segment prog : "+prog+" "+secondElapsedInSegment+" "+duration.getValue());
     
     double dLat = (end_location.getLat() - start_location.getLat()) * prog;
     double dLng = (end_location.getLng() - start_location.getLng()) * prog;

@@ -1,8 +1,12 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 
 public class ViaWaypoint  implements Serializable{
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private Point location;
   private long step_index;
   private double step_interpolation;

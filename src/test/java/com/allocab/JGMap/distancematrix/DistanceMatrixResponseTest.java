@@ -1,14 +1,14 @@
-package com.allocab.JGMap.distancematrix;
+package com.allocab.jGmap.distancematrix;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.allocab.JGMap.ResourceLoader;
-import com.allocab.JGMap.direction.TestDirectionResponse;
-import com.allocab.JGMap.response.AbstractResponse;
-import com.allocab.JGMap.response.distancematrix.DistanceMatrixResponse;
-import com.allocab.JGMap.response.distancematrix.DistanceMatrixResponse.Element;
+import com.allocab.jGmap.ResourceLoader;
+import com.allocab.jGmap.direction.TestDirectionResponse;
+import com.allocab.jGmap.response.AbstractResponse;
+import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse;
+import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse.Element;
 
 public class DistanceMatrixResponseTest {
 

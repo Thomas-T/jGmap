@@ -1,4 +1,4 @@
-package com.allocab.JGMap.distancematrix;
+package com.allocab.jGmap.distancematrix;
 
 import static org.junit.Assert.*;
 
@@ -6,12 +6,12 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.allocab.JGMap.common.Language;
-import com.allocab.JGMap.common.Location;
-import com.allocab.JGMap.common.Parameterizable;
-import com.allocab.JGMap.common.TravelMode;
-import com.allocab.JGMap.common.Unit;
-import com.allocab.JGMap.request.distancematrix.DistanceMatrixRequest;
+import com.allocab.jGmap.common.Language;
+import com.allocab.jGmap.common.Location;
+import com.allocab.jGmap.common.Parameterizable;
+import com.allocab.jGmap.common.TravelMode;
+import com.allocab.jGmap.common.Unit;
+import com.allocab.jGmap.request.distancematrix.DistanceMatrixRequest;
 
 public class DistanceMatrixRequestTest {
   

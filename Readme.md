@@ -8,7 +8,7 @@ Currently only 2 services are supported
 * [DistanceMatrix](https://developers.google.com/maps/documentation/distance-matrix/?hl=en)
 
 ## Using Direction Service
-```
+```java
 DirectionResponse dr = DirectionService.gen()
 	.origin("19 rue de la viabert, lyon, France")
 	.destination("102 avenue saxe, lyon, France")
@@ -19,7 +19,7 @@ Generate a `DirectionService`, add the `origin`address, the `destination` addres
 The `DirectionResponse` object has the same definition of the one defined by GoogleMaps. [See the GoogleMaps definition](https://developers.google.com/maps/documentation/directions/intro?hl=en#DirectionsResponses)
 
 ## Using Distance Matrix
-```
+```java
 DistanceMatrixResponse response = DistanceMatrixService.gen()
 	.addOrigin("19 rue de la viabert, 69006 Lyon")
 	.addOrigin("102 avenue maréchal de saxe 69003 Lyon")
@@ -32,7 +32,7 @@ Generate a `DistanceMatrixService`, add your `origin` addresses and your `destin
 ## Google Maps Premier
 You can set up the lib with your Google Maps Premier credentials.
 
-```
+```java
 AbstractRequest.setApiClientId("my-client-id");
 AbstractRequest.setApiCryptoKey("my-api-key");
 ```

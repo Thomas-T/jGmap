@@ -1,14 +1,14 @@
-package com.allocab.JGMap.direction;
+package com.allocab.jGmap.direction;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.allocab.JGMap.request.Fetcher;
-import com.allocab.JGMap.request.direction.DirectionRequest;
-import com.allocab.JGMap.response.AbstractResponse.Status;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
+import com.allocab.jGmap.request.Fetcher;
+import com.allocab.jGmap.request.direction.DirectionRequest;
+import com.allocab.jGmap.response.AbstractResponse.Status;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.direction.DirectionResponse.Comparison;
 
 public class TestDirectionRequest {
 

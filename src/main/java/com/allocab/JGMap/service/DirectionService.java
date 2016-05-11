@@ -1,11 +1,11 @@
-package com.allocab.JGMap.service;
+package com.allocab.jGmap.service;
 
 import java.util.Date;
 
-import com.allocab.JGMap.request.Fetcher;
-import com.allocab.JGMap.request.direction.DirectionRequest;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.direction.Point;
+import com.allocab.jGmap.request.Fetcher;
+import com.allocab.jGmap.request.direction.DirectionRequest;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.direction.Point;
 
 public class DirectionService implements Service<DirectionRequest, DirectionResponse> {
 	

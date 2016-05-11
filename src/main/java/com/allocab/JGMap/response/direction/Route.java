@@ -1,12 +1,16 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import com.allocab.JGMap.common.Mesure;
-import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
+import com.allocab.jGmap.common.Mesure;
+import com.allocab.jGmap.response.direction.DirectionResponse.Comparison;
 
 public class Route  implements Serializable{
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private String summary;
   private Leg[] legs;
   private int[] waypoint_order;
@@ -53,7 +57,7 @@ public class Route  implements Serializable{
         return leg;
       }
     }  
-    System.out.println("returngin last leg");
+    //System.out.println("returngin last leg");
     
     Leg leg =legs[legs.length-1];
     leg.secondElapsedInLeg = elapsedSeconds;    

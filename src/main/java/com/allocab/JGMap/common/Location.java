@@ -1,11 +1,11 @@
-package com.allocab.JGMap.common;
+package com.allocab.jGmap.common;
 
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import com.allocab.JGMap.response.direction.Point;
+import com.allocab.jGmap.response.direction.Point;
 
 
 @SuppressWarnings("serial")

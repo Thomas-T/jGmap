@@ -1,4 +1,4 @@
-package com.allocab.JGMap.request;
+package com.allocab.jGmap.request;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -20,7 +20,7 @@ public class UrlSigner {
 	    keyString = keyString.replace('-', '+');
 	    keyString = keyString.replace('_', '/');
 	    //System.out.println("Key: " + keyString);
-	    this.key = Base64.decode(keyString);
+	    key = Base64.decode(keyString);
 	  }
 
 	  public String signRequest(String path, String query) throws NoSuchAlgorithmException,

@@ -1,4 +1,4 @@
-package com.allocab.JGMap.direction;
+package com.allocab.jGmap.direction;
 
 import static org.junit.Assert.*;
 
@@ -6,11 +6,11 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.allocab.JGMap.request.AbstractRequest;
-import com.allocab.JGMap.response.AbstractResponse.Status;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.direction.DirectionResponse.Comparison;
-import com.allocab.JGMap.service.DirectionService;
+import com.allocab.jGmap.request.AbstractRequest;
+import com.allocab.jGmap.response.AbstractResponse.Status;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.direction.DirectionResponse.Comparison;
+import com.allocab.jGmap.service.DirectionService;
 
 public class TestDirectionService {
 

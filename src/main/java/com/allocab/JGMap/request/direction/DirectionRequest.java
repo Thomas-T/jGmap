@@ -1,20 +1,20 @@
-package com.allocab.JGMap.request.direction;
+package com.allocab.jGmap.request.direction;
 
 import java.util.Date;
 
-import com.allocab.JGMap.common.Avoid;
-import com.allocab.JGMap.common.Language;
-import com.allocab.JGMap.common.Location;
-import com.allocab.JGMap.common.TLD;
-import com.allocab.JGMap.common.TravelMode;
-import com.allocab.JGMap.common.Unit;
-import com.allocab.JGMap.common.serializer.DepartureTimeSerializer;
-import com.allocab.JGMap.request.AbstractRequest;
-import com.allocab.JGMap.request.HttpMethod;
-import com.allocab.JGMap.response.direction.DirectionResponse;
-import com.allocab.JGMap.response.direction.Point;
+import com.allocab.jGmap.common.Avoid;
+import com.allocab.jGmap.common.Language;
+import com.allocab.jGmap.common.Location;
+import com.allocab.jGmap.common.TLD;
+import com.allocab.jGmap.common.TravelMode;
+import com.allocab.jGmap.common.Unit;
+import com.allocab.jGmap.common.serializer.DepartureTimeSerializer;
+import com.allocab.jGmap.request.AbstractRequest;
+import com.allocab.jGmap.request.HttpMethod;
+import com.allocab.jGmap.response.direction.DirectionResponse;
+import com.allocab.jGmap.response.direction.Point;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.allocab.JGMap.common.serializer.LocationSerializer;
+import com.allocab.jGmap.common.serializer.LocationSerializer;
 
 public class DirectionRequest extends AbstractRequest<DirectionResponse> {
 	

@@ -1,10 +1,14 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 
-import com.allocab.JGMap.common.Parameterizable;
+import com.allocab.jGmap.common.Parameterizable;
 
 public class Point  implements Serializable, Parameterizable {
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private double lat;
   private double lng;
   

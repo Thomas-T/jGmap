@@ -1,4 +1,4 @@
-package com.allocab.JGMap.service;
+package com.allocab.jGmap.service;
 
 
 public interface Service<Request,Response> {

@@ -1,17 +1,19 @@
-package com.allocab.JGMap.response.direction;
+package com.allocab.jGmap.response.direction;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import com.allocab.JGMap.common.Mesure;
-import com.allocab.JGMap.common.TravelMode;
+import com.allocab.jGmap.common.Mesure;
+import com.allocab.jGmap.common.TravelMode;
 
 
 public class Step  implements Serializable{
   
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
   private String html_instructions;
   private Mesure distance;
   private Mesure duration;
@@ -27,7 +29,7 @@ public class Step  implements Serializable{
   public transient long secondElapsedInStep; 
   
   public Segment getSegmentAtDuration(long secondElapsedInStep) {
-    System.out.println("secondElapsedInStep : "+secondElapsedInStep);
+    //System.out.println("secondElapsedInStep : "+secondElapsedInStep);
     long secondsAtSegmentEnd = 0;
     for(Segment segment : segments) {
       secondsAtSegmentEnd += segment.getDuration().getValue();
@@ -38,7 +40,7 @@ public class Step  implements Serializable{
     }    
     
     Segment segment = segments[segments.length-1];
-    System.out.println("returning last seg : "+secondsAtSegmentEnd+" "+segment.getStart_location().getLat()+" "+segment.getStart_location().getLng()+" "+segment.getEnd_location().getLat()+" "+segment.getEnd_location().getLng());
+    //System.out.println("returning last seg : "+secondsAtSegmentEnd+" "+segment.getStart_location().getLat()+" "+segment.getStart_location().getLng()+" "+segment.getEnd_location().getLat()+" "+segment.getEnd_location().getLng());
     segment.secondElapsedInSegment = secondsAtSegmentEnd;
     return segment;
   }
@@ -60,7 +62,7 @@ public class Step  implements Serializable{
     Segment segment;
     while(i < points.size() - 1) {   
       
-      System.out.println("p1:"+points.get(i)+" "+points.get(i+1));
+      //System.out.println("p1:"+points.get(i)+" "+points.get(i+1));
       
       segment = new Segment(points.get(i), points.get(i+1));  
       segments.add(segment);

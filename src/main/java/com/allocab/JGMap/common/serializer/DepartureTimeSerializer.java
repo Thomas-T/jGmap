@@ -1,4 +1,4 @@
-package com.allocab.JGMap.common.serializer;
+package com.allocab.jGmap.common.serializer;
 
 import java.io.IOException;
 import java.util.Date;

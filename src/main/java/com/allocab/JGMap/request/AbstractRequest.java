@@ -1,8 +1,8 @@
-package com.allocab.JGMap.request;
+package com.allocab.jGmap.request;
 
 import java.util.List;
 import java.util.Map;
-import com.allocab.JGMap.response.AbstractResponse;
+import com.allocab.jGmap.response.AbstractResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
