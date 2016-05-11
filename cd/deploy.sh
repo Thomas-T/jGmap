@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
-    mvn -X deploy -P sign --settings cd/mvnsettings.xml
+    gpg --import cd/sign-key.gpg
+    mvn deploy -P sign,build-extras --settings cd/mvnsettings.xml
 fi
