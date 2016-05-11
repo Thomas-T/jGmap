@@ -7,16 +7,34 @@ import com.allocab.jGmap.request.direction.DirectionRequest;
 import com.allocab.jGmap.response.direction.DirectionResponse;
 import com.allocab.jGmap.response.direction.Point;
 
+/**
+ * 
+ * Service to make a Direction Request to the Google Maps WebService
+ * 
+ * @author thomastiercelin
+ *
+ */
 public class DirectionService implements Service<DirectionRequest, DirectionResponse> {
 	
 	private DirectionRequest request;
 	
+	/**
+	 * Generate the @DirectionService
+	 * 
+	 * @return the @DirectionService
+	 */
 	public static DirectionService gen() {
 		DirectionService service = new DirectionService();		
 		service.request = DirectionRequest.gen();		
 		return service;
 	}
 	
+	/**
+	 * Execute the @DirectionRequest provided
+	 * 
+	 * @return @DirectionResponse
+	 * 
+	 */
 	@Override
 	public DirectionResponse call() {
 		Fetcher<DirectionResponse, DirectionRequest> fetcher = Fetcher.gen(request);
