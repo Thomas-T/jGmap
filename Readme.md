@@ -38,8 +38,10 @@ Generate a `DistanceMatrixService`, add your `origin` addresses and your `destin
 ## Google Maps Premier
 You can set up the lib with your Google Maps Premier credentials.
 
+
 ```java
 AbstractRequest.setApiClientId("my-client-id");
 AbstractRequest.setApiCryptoKey("my-api-key");
 ```
+
 This will sign all of your requests and let you access special features like traffic estimation.
