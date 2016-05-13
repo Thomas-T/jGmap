@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.allocab.jGmap.common.Language;
 import com.allocab.jGmap.common.TravelMode;
 import com.allocab.jGmap.common.Unit;
-import com.allocab.jGmap.request.distancematrix.DistanceMatrixRequest;
+import com.allocab.jGmap.request.DistanceMatrixRequest;
 
 public class DistanceMatrixServiceTest {
 

@@ -1,10 +1,7 @@
-package com.allocab.jGmap.request.distancematrix;
+package com.allocab.jGmap.common;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
-import com.allocab.jGmap.common.Location;
-import com.allocab.jGmap.common.Parameterizable;
 
 @SuppressWarnings("serial")
 public class LocationList extends ArrayList<Location> implements Serializable, Parameterizable {

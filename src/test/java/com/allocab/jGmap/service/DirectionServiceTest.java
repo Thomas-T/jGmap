@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.allocab.jGmap.request.direction.DirectionRequest;
+import com.allocab.jGmap.request.DirectionRequest;
 import com.allocab.jGmap.response.direction.Point;
 
 public class DirectionServiceTest {

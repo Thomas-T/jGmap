@@ -1,4 +1,4 @@
-package com.allocab.jGmap.request.direction;
+package com.allocab.jGmap.request;
 
 import java.util.Date;
 
@@ -9,8 +9,6 @@ import com.allocab.jGmap.common.TLD;
 import com.allocab.jGmap.common.TravelMode;
 import com.allocab.jGmap.common.Unit;
 import com.allocab.jGmap.common.serializer.DepartureTimeSerializer;
-import com.allocab.jGmap.request.AbstractRequest;
-import com.allocab.jGmap.request.HttpMethod;
 import com.allocab.jGmap.response.direction.DirectionResponse;
 import com.allocab.jGmap.response.direction.Point;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

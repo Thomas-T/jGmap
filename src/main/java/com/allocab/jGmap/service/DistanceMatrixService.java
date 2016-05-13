@@ -6,8 +6,8 @@ import com.allocab.jGmap.common.Language;
 import com.allocab.jGmap.common.Location;
 import com.allocab.jGmap.common.TravelMode;
 import com.allocab.jGmap.common.Unit;
+import com.allocab.jGmap.request.DistanceMatrixRequest;
 import com.allocab.jGmap.request.Fetcher;
-import com.allocab.jGmap.request.distancematrix.DistanceMatrixRequest;
 import com.allocab.jGmap.response.distancematrix.DistanceMatrixResponse;
 
 public class DistanceMatrixService implements Service<DistanceMatrixRequest, DistanceMatrixResponse> {

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.allocab.jGmap.common.Location;
-import com.allocab.jGmap.request.distancematrix.LocationList;
+import com.allocab.jGmap.common.LocationList;
 
 public class LocationListTest {
 

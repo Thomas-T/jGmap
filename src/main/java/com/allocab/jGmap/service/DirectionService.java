@@ -2,8 +2,8 @@ package com.allocab.jGmap.service;
 
 import java.util.Date;
 
+import com.allocab.jGmap.request.DirectionRequest;
 import com.allocab.jGmap.request.Fetcher;
-import com.allocab.jGmap.request.direction.DirectionRequest;
 import com.allocab.jGmap.response.direction.DirectionResponse;
 import com.allocab.jGmap.response.direction.Point;
 
